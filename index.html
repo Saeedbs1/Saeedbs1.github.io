@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=1.0, initial-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="public/home.css">
+  <title>Internet Computing</title>
+  <link rel="icon" href="public/img/icon.ico" sizes="16x16">
+</head>
+
+<body>
+
+  <header>
+
+    <!----------------------------------------------------------Navbar----------------------------------------------------------------------------------->
+
+    <div class="navbar">
+      <div class="content">
+        <div class="logo"><a href="#about">Saeed Bou Shakra</a></div>
+
+        <ul class="links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#service">Services</a></li>
+          <li><a href="#project-sec">Projects</a></li>
+        </ul>
+        <a href="#contact" class="action_btn">Contact</a>
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown_menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#service">Services</a></li>
+      <li><a href="#project-sec">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </div>
+    <!----------------------------------------------------------Intro----------------------------------------------------------------------------------->
+
+    <div class="intro">
+      <div class="content">
+        <div class="cont">
+          <div class="box">
+            <h3 class="name">Hello, I'm </h3>
+            <h1 class="FN">Saeed Bou Shakra <br> A</h1><span id="first" class="txt-rotate" data-period="2000"
+              data-rotate='[ "Full-Stack Developer.", "Penetration Tester.", "Frontend Developer.", "Backend Developer.", "Cyber Security Analyst." ]'></span>
+          </div>
+          <div class="buttons"><a href="#about" class="Learn-button">Learn More</a>
+            <a href="#contact" class="Hire-button">Hire Me</a>
+          </div>
+        </div>
+      </div>
+      <div class="curve"></div>
+    </div>
+    </div>
+  </header>
+
+
+  <!----------------------------------------------------------About----------------------------------------------------------------------------------->
+  <section class="aboutSec" id="about">
+    <div class="content">
+      <div class="container">
+        <h1 class="sub-title">About Me</h1>
+        <h4>Detail-oriented and results-driven computer science student with a strong background in software
+          engineering, front-end, and back-end development. Proficient in creating robust applications while maintaining
+          hardware and software security. Possessing deep technical knowledge, exceptional communication skills, and a
+          collaborative approach to working in team environments.</h4>
+        <div class="tab">
+          <div class="tab-titles">
+            <div class="tab-links active-link" onclick="opentab('Skills')" id="animate" style="--order:1;">Skills
+            </div>
+            <div class="tab-links" onclick="opentab('Education')" id="animate" style="--order:5;">Education</div>
+            <div class="tab-links" onclick="opentab('Certifications')" id="animate" style="--order:7;">
+              Certifications
+            </div>
+          </div>
+        </div>
+        <div class="tab-contents active-tab" id="Skills">
+          <div class="skill-type">
+            <div class="box-text">
+              <p class="box-title">Frontend</p>
+              <ul>
+                <i class="fa-brands fa-html5 fa-xs" style="color: #E44D26;"> HTML</i>
+                <i class="fa-brands fa-js fa-xs" style="color:#F0DB4F;">JAVASCRIPT</i>
+                <i class="fa-brands fa-css3 fa-xs" style="color:  #264de4">CSS </i>
+                <i class="fa-brands fa-react fa-xs" style="color:  #00bfff" >React</i>
+              </ul>
+            </div>
+
+            <div class="box-text">
+              <p class="box-title">Backend</p>
+              <ul>
+                <i class="fa-brands fa-node fa-xs" style="color:#68A063;">Node.js</i>
+                <i class="fa-brands fa-python fa-xs" style="color:#4B8BBE;">Python </i>
+                <i class="fa-solid fa-laptop-code   fa-xs" style="color: #a9ab26;">C++</i>
+                <i class="fa-brands fa-php fa-xs" style="color: red;">PHP</i>
+              </ul>
+            </div>
+            <div class="box-text">
+              <p class="box-title">Others</p>
+              <ul>
+                <i class="fa-brands fa-linux fa-xs" style="color:#fff;">Linux</i>
+                <i class="fa-brands fa-windows fa-xs" style="color: #02A5FF">Windows</i>
+                <i class="fa-solid fa-network-wired fa-xs" style="color: #68A063">Networking</i>
+                <i class="fa-solid fa-shield fa-xs" style="color: #004dd1;">Cybersecurity</i>
+                <i class="fa-solid fa-shield-halved fa-xs" style="color: #a30b00;"> Pentesting</i>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-contents" id="Education">
+
+          <h1 style="margin: 20px 0px;">NOTRE DAME UNIVERSITY - LOUAIZE </h1>
+          <h3>BACHELOR OF SCIENCE IN COMPUTER SCIENCE - ABET
+            ACCREDITED PROGRAM</h3>
+          <h4> 09/2020 - 1/2024</h4>
+        </div>
+        <div class="tab-contents" id="Certifications">
+          <ul>
+            <li>Earned Udemy Certificate – Ethical Hacking and Cyber Security Masterclass.</li>
+            <li> Earned NVIDIA DLI Certificate – Fundamentals of Accelerated Computing with CUDA C/C++.</li>
+            <li> Earned Udemy Certificate – Learn Ethical Hacking from Scratch.</li>
+            <li>Earned CISCO Certificate – Introduction to Cybersecurity.</li>
+           <li>Earned Udemy Certificate – The Git & GitHub Bootcamp </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!----------------------------------------------------------Services----------------------------------------------------------------------------------->
+
+  <section id="service">
+    <div class="wrapper">
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+      <div><span class="dot"></span></div>
+    </div>
+    <div class="content">
+      <div class="title">
+        <h1>Projects</h1>
+      </div>
+      <div class="card-sec">
+          <div class="card" id="animate" style="--order:1;">
+            <div class="card-image">
+              <img
+                src="https://th.bing.com/th/id/R.2bed34b9ae3fb632e28eb210c8945d57?rik=Uoi4gYDCciw%2fhg&pid=ImgRaw&r=0">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Development</p>
+              <h2 class="card-title">Website</h2>
+              <p class="card-body">Creating, building, and maintaining of websites. It includes web design, web
+                publishing, web programming, and database management.</p>
+            </div>
+          </div>
+      
+
+      
+          <div class="card" id="animate" style="--order:3;">
+            <div class="card-image">
+              <img
+                src="https://1.bp.blogspot.com/-vuyegUmd1CE/YKDZ9BdqktI/AAAAAAAAAD0/VqVOFFjpyd85HOwie1cjZH9Px4u-VcDUQCPcBGAsYHg/w640-h360/1.png">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Development</p>
+              <h2 class="card-title">Game</h2>
+              <p class="card-body">Creating video games from a concept to a playable reality. It involves coding visual
+                elements, programming features, and testing iterations until a game is ready for market.</p>
+            </div>
+          </div>
+      
+
+        
+          <div class="card" id="animate" style="--order:5;">
+            <div class="card-image">
+              <img src="https://www.levelaccess.com/wp-content/uploads/2021/04/Overlay-Series-4.jpeg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Development</p>
+              <h2 class="card-title">Application</h2>
+              <p class="card-body">Creating software applications that run on mobile devices, including personal digital
+                assistants, enterprise digital assistants, and mobile phones.</p>
+            </div>
+          </div>
+        
+
+        <a href='/inquire'>
+          <div class="card" id="animate" style="--order:1;">
+            <div class="card-image">
+              <img src="https://i.pinimg.com/originals/16/46/88/164688925209bba5f83f722775767714.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Security</p>
+              <h2 class="card-title">Cybersecurity</h2>
+              <p class="card-body">Protect your applications and websites from digital attacks,ensuring data privacy and
+                safety.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href='/inquire'>
+          <div class="card" id="animate" style="--order:3;">
+            <div class="card-image">
+              <img src="https://www.opensourceforu.com/wp-content/uploads/2017/05/bug.jpg">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Security</p>
+              <h2 class="card-title">Pentesting</h2>
+              <p class="card-body">Test your application and website for any possible vulnerability and Providing
+                High-end
+                reports.</p>
+            </div>
+          </div>
+        </a>
+
+        <a href='/inquire'>
+          <div class="card" id="animate" style="--order:5;">
+            <div class="card-image">
+              <img src="https://documents.trendmicro.com/images/TEx/articles/Cloud-Security-101-cover.png">
+            </div>
+            <div class="card-text">
+              <p class="card-meal-type">Security</p>
+              <h2 class="card-title">cloud security</h2>
+              <p class="card-body">Securing cloud computing systems,ensuring data privacy and safety across online-based
+                infrastructure, applications, and platforms</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="timeline">
+    <div class="title">
+      <h1>Experience</h1>
+    </div>
+    <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+      <div class="timeline__event__icon ">
+       09/2021 - 04/2023
+      </div>
+      <div class="timeline__event__date">
+        Penetration Tester Freelancer
+      </div>
+      <div class="timeline__event__content ">
+        <div class="timeline__event__title">
+          HackerOne , BugCrowd
+        </div>
+        <div class="timeline__event__description">
+          <ul>
+            <li>Performed web application, mobile application, and network penetration tests. </li>
+            <li>Actively searched for potential security issues and security gaps that are beyond the ability of
+              any security scanner tool to detect.</li>
+            <li>Used Owasp top 10 guidelines to scan for web vulnerabilities.</li>
+            <li>
+              Communicated technical vulnerabilities and remediation steps to developers. </li>
+            <li>Created vulnerability assessment reports detailing identiﬁed exposures. </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+      <div class="timeline__event__icon">
+        05/2023 - 08/2023
+      </div>
+      <div class="timeline__event__date">
+        Full Stack Developer Intern
+      </div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">
+          The Web Addicts
+        </div>
+        <div class="timeline__event__description">
+          <ul>
+            <li>Designed and implemented dynamic front-end interfaces using HTML, SCSS, and JavaScript, focusing on
+              user-centric design principles to optimize engagement and navigation.</li>
+            <li>Collaborated with cross-functional teams, including designers and QA professionals, to deliver
+              high-quality and visually appealing e-commerce platforms that meet both client requirements and industry
+              standards.</li>
+            <li>Conducted thorough testing and debugging to identify and resolve issues, ensuring the stability and
+              reliability of e-commerce applications in a production environment.</li>
+            <li>Developed and implemented robust back-end solutions for multiple e-commerce projects using Laravel and
+              PHP.</li>
+            <li>
+              Ensured secure backend operations by implementing Laravel security best practices and measures.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+      <div class="timeline__event__icon">
+        08/2023 - 01/2024
+      </div>
+      <div class="timeline__event__date">
+        Software Engineer Intern
+      </div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">
+          Neo Mena Technologies
+        </div>
+        <div class="timeline__event__description">
+          <ul>
+            <li>Designed and implemented an automated Jira reporting system to enhance project tracking and improve team
+              productivity.</li>
+            <li>Developed and published the “eslint-plugin-neo-technologies” npm package, featuring custom ESLint rules
+              that focus on best practices, code consistency, and error prevention, leading to improved code quality and
+              enforced coding standards across the codebase.</li>
+            <li>Developed a well-rounded skill set, including proficiency in QA testing, expertise in programming
+              languages such as Python and Flask, and mastery of front-end development with React and Material-UI (MUI).
+            </li>
+            <li>Implemented comprehensive unit tests for React components using testing libraries such as Jest and React
+              Testing Library.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!----------------------------------------------------------Contact----------------------------------------------------------------------------------->
+  <footer id="contact">
+    <div class="icons">
+      <a href="#" class="icon icon--instagram">
+        <i class="ri-instagram-line"></i>
+      </a>
+      <a href="#" class="icon icon--twitter">
+        <i class="ri-twitter-line"></i>
+      </a>
+      <a href="#" class="icon icon--linkedin">
+        <i class="ri-linkedin-line"></i>
+      </a>
+      <a href="#" class="icon icon--github">
+        <i class="ri-github-line"></i>
+      </a>
+    </div>
+
+    <a href="mailto:saeedbs2001.1@gmail.com"><i class="fa fa-envelope"
+        style="font-size:large;padding:5px"></i>saeedb2001.@gmail.com</a>
+
+    <a href="tel:+96176125464"><i class="fa fa-phone" style="font-size:large;padding:5px"></i>+96176125464</a>
+    <small>Copyright &copy; 2023 Saeed Bou Shakra</small>
+  </footer>
+
+</body>
+<!----------------------------------------------------------JavaScript----------------------------------------------------------------------------------->
+
+<script>
+
+  const toggleBtn = document.querySelector('.toggle_btn')
+  const toggleBtnIcon = document.querySelector('.toggle_btn  i')
+  const dropDownMenu = document.querySelector('.dropdown_menu')
+  toggleBtn.onclick = function () {
+    dropDownMenu.classList.toggle('open')
+    const isOpen = dropDownMenu.classList.contains('open')
+
+
+    toggleBtnIcon.classList = isOpen
+      ? 'fa-solid fa-xmark'
+      : 'fa-solid fa-bars'
+
+  }
+  /*============================================Scroll Animation========================================*/
+  function animate() {
+    var reveals = document.querySelectorAll("#animate");
+
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight + 60;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+
+      if (elementTop + 200 < windowHeight) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", animate);
+
+  /*====================================================Nav background change================================*/
+  const navbar = document.querySelector('.navbar');
+  window.onscroll = () => {
+    if (window.scrollY > 100) {
+      navbar.classList.add('nav');
+    } else {
+      navbar.classList.remove('nav');
+    }
+  };
+
+  /*==============================================Back to top on restart==================================*/
+
+  window.onbeforeunload = function () {
+    if (window.scrollTo) window.scrollTo(0, 0);
+  };
+  if (history && history.scrollRestoration) history.scrollRestoration = "manual";
+
+
+  /*================================About links============================================*/
+  var tablinks = document.getElementsByClassName("tab-links");
+  var tabcontents = document.getElementsByClassName("tab-contents");
+  function opentab(tabname) {
+    for (tablink of tablinks) {
+      tablink.classList.remove("active-link");
+
+    }
+    for (tabcontent of tabcontents) {
+      tabcontent.classList.remove("active-tab");
+
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+  }
+
+  /*8=============================================Word Typing========================================*/
+  var TxtRotate = function (el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+  };
+
+  TxtRotate.prototype.tick = function () {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+    var that = this;
+    var delta = 300 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function () {
+      that.tick();
+    }, delta);
+  };
+
+  window.onload = function () {
+    var elements = document.getElementsByClassName('txt-rotate');
+    for (var i = 0; i < elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-rotate');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+    document.body.appendChild(css);
+  };
+
+</script>
+
+</html>
