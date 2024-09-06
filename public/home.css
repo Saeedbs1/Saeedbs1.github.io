@@ -1,7 +1,7 @@
 /*============================================================skeleton==============================================================*/
 html {
   scroll-behavior: smooth !important;
- font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 * {
   margin: 0;
@@ -123,7 +123,7 @@ footer {
   font-weight: bold;
   gap: 2.7rem;
 }
-.navbar .links  li {
+.navbar .links li {
   list-style: none;
 }
 .navbar .links a {
@@ -146,7 +146,7 @@ footer {
 }
 .action_btn {
   background: linear-gradient(to left, #36096d 0%, #3791d6 74%),
-    linear-gradient(to right, #36096d 0%, #3791d6  74%);
+    linear-gradient(to right, #36096d 0%, #3791d6 74%);
   background-size: 100%, 200%;
   color: #fff;
   padding: 0.5rem 1rem;
@@ -203,7 +203,6 @@ footer {
   background-position: 100% 110%, 4px 110%;
   background-repeat: no-repeat;
   transition: background-size 400ms;
-
 }
 .dropdown_menu li a:hover {
   background-size: 0 3px, 100% 3px;
@@ -271,7 +270,7 @@ footer {
   margin-left: 30px;
   color: white;
   font-family: monospace;
-  background-image: linear-gradient(to left, #36096d 0%, #3791d6  100%);
+  background-image: linear-gradient(to left, #36096d 0%, #3791d6 100%);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
@@ -289,8 +288,8 @@ footer {
   gap: 50px;
 }
 .Learn-button {
-  background: linear-gradient(to left, #36096d 0%, #3791d6  0%),
-    linear-gradient(to left, #36096d 0%, #3791d6  100%);
+  background: linear-gradient(to left, #36096d 0%, #3791d6 0%),
+    linear-gradient(to left, #36096d 0%, #3791d6 100%);
   background-size: 100%, 200%;
   color: #fff;
   padding: 0.5rem 1rem;
@@ -308,8 +307,8 @@ footer {
   background-size: 0%, 100%;
 }
 .Hire-button {
-  background: linear-gradient(to left, #36096d 100%, #3791d6  100%),
-    linear-gradient(to right, #36096d 0%, #3791d6  100%);
+  background: linear-gradient(to left, #36096d 100%, #3791d6 100%),
+    linear-gradient(to right, #36096d 0%, #3791d6 100%);
   background-size: 100%, 200%;
   border-radius: 20px;
   color: #fff;
@@ -335,11 +334,9 @@ footer {
   background-color: #36096d;
   overflow: hidden;
   padding: 50px 0px 50px 0;
- 
 }
 
 .aboutSec .content {
-  
   text-align: center;
   display: flex;
   align-items: center;
@@ -417,7 +414,6 @@ footer {
 .tab-contents.active-tab {
   display: block;
 }
-
 
 .skill-type {
   display: flex;
@@ -566,7 +562,7 @@ footer {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color:#000;
+  color: #000;
   padding: 0px 0 50px 0;
 }
 
@@ -786,7 +782,7 @@ footer {
 @keyframes fillTop {
   100% {
     top: 100%;
-  height: 250%;
+    height: 250%;
   }
 }
 
@@ -796,12 +792,10 @@ footer {
   }
 }
 
-
 /* ==================================================================================================Cards============================================================================== */
 #service {
   width: 100%;
   position: relative;
- 
 }
 
 #service .content {
@@ -809,7 +803,6 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
- 
 }
 
 .card-sec {
@@ -818,7 +811,7 @@ footer {
   flex-wrap: wrap;
 
   gap: 100px;
-  margin: 50px 0 100px 0px;
+  margin: 0px 0 100px 0px;
 }
 
 .card {
@@ -842,13 +835,11 @@ footer {
 .card-image > img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: bottom;
+  object-fit: fill;
 }
 .card-text {
   margin: -30px auto;
-  margin-bottom: -50px;
-  width: 325px;
+  width: 380px;
   background-color: #1d1c20;
   color: white;
   padding: 20px;
@@ -857,13 +848,12 @@ footer {
 }
 
 .card-title {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   margin-bottom: 20px;
-  margin-top: 5px;
   color: white;
 }
 .card-body {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #a8acb2;
 }
 .card-image > img:hover {
@@ -974,13 +964,13 @@ footer {
   }
 
   .carousel__cell {
-    width:100%;
+    width: 100%;
     margin-top: 100px;
   }
 
   .flip-container,
-.front,
-.back {
-  max-width: 100%;
-}
+  .front,
+  .back {
+    max-width: 100%;
+  }
 }
