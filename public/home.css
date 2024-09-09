@@ -279,11 +279,16 @@ footer {
   background-position: 100% 0%;
   background-repeat: no-repeat;
   background-color: hsl(0, 0%, 1.6%);
-  --mask:
-    radial-gradient(103.23px at 50% calc(100% - 144px),#000 99%,#0000 101%) calc(50% - 120px) 0/240px 100%,
-    radial-gradient(103.23px at 50% calc(100% + 84px),#0000 99%,#000 101%) 50% calc(100% - 60px)/240px 100% repeat-x;
+  --mask: radial-gradient(
+        103.23px at 50% calc(100% - 144px),
+        #000 99%,
+        #0000 101%
+      )
+      calc(50% - 120px) 0/240px 100%,
+    radial-gradient(103.23px at 50% calc(100% + 84px), #0000 99%, #000 101%) 50%
+      calc(100% - 60px) / 240px 100% repeat-x;
   -webkit-mask: var(--mask);
-          mask: var(--mask);
+  mask: var(--mask);
 }
 
 .intro .cont {
@@ -308,7 +313,6 @@ footer {
   margin-left: 30px;
   color: var(--color-gradient-end);
   font-family: monospace;
- 
 }
 .FN {
   font-size: 30px;
@@ -644,11 +648,12 @@ footer {
 #projects {
   width: 100%;
   position: relative;
- --mask:
-    radial-gradient(11.41px at 50% 15.5px,#000 99%,#0000 101%) calc(50% - 20px) 0/40px 100%,
-    radial-gradient(11.41px at 50% -5.5px,#0000 99%,#000 101%) 50% 10px/40px 100% repeat-x;
+  --mask: radial-gradient(11.41px at 50% 15.5px, #000 99%, #0000 101%)
+      calc(50% - 20px) 0/40px 100%,
+    radial-gradient(11.41px at 50% -5.5px, #0000 99%, #000 101%) 50% 10px/40px
+      100% repeat-x;
   -webkit-mask: var(--mask);
-          mask: var(--mask);
+  mask: var(--mask);
 }
 
 #projects .content {
@@ -1054,9 +1059,9 @@ footer {
   .navbar .toggle_btn {
     display: block;
   }
-.title h1{
-font-size: 30px;
-}
+  .title h1 {
+    font-size: 30px;
+  }
   .dropdown_menu {
     display: block;
   }
@@ -1066,10 +1071,10 @@ font-size: 30px;
     align-items: center;
   }
   .card {
-  width: 98%;
-  max-width: 450px;
-}
-.card-image {
-  height: 220px;
-}
+    width: 98%;
+    max-width: 450px;
+  }
+  .card-image {
+    height: 220px;
+  }
 }
