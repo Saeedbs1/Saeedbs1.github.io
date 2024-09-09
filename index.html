@@ -11,7 +11,7 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="public/home.css">
-  <title>Internet Computing</title>
+  <title>Saeed Bou Shakra</title>
   <link rel="icon" href="public/img/icon.ico" sizes="16x16">
 </head>
 
@@ -28,10 +28,11 @@
         <ul class="links">
           <li><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#service">Services</a></li>
-          <li><a href="#project-sec">Projects</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact" class="action_btn">Contact</a></li>
         </ul>
-        <a href="#contact" class="action_btn">Contact</a>
+
         <div class="toggle_btn">
           <i class="fa-solid fa-bars"></i>
         </div>
@@ -40,8 +41,8 @@
     <div class="dropdown_menu">
       <li><a href="#">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#service">Services</a></li>
-      <li><a href="#project-sec">Projects</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </div>
     <!----------------------------------------------------------Intro----------------------------------------------------------------------------------->
@@ -55,7 +56,7 @@
               data-rotate='[ "Full-Stack Developer.", "Penetration Tester.", "Frontend Developer.", "Backend Developer.", "Cyber Security Analyst." ]'></span>
           </div>
           <div class="buttons"><a href="#about" class="Learn-button">Learn More</a>
-            <a href="#contact" class="Hire-button">Hire Me</a>
+            <a href="#projects" class="Hire-button">Projects</a>
           </div>
         </div>
       </div>
@@ -69,7 +70,9 @@
   <section class="aboutSec" id="about">
     <div class="content">
       <div class="container">
-        <h1 class="sub-title">About Me</h1>
+        <div class="title" style="margin:20px;">
+          <h1>About Me</h1>
+        </div>
         <h4>Detail-oriented and results-driven computer science student with a strong background in software
           engineering, front-end, and back-end development. Proficient in creating robust applications while maintaining
           hardware and software security. Possessing deep technical knowledge, exceptional communication skills, and a
@@ -92,7 +95,7 @@
                 <i class="fa-brands fa-html5 fa-xs" style="color: #E44D26;"> HTML</i>
                 <i class="fa-brands fa-js fa-xs" style="color:#F0DB4F;">JAVASCRIPT</i>
                 <i class="fa-brands fa-css3 fa-xs" style="color:  #264de4">CSS </i>
-                <i class="fa-brands fa-react fa-xs" style="color:  #00bfff" >React</i>
+                <i class="fa-brands fa-react fa-xs" style="color:  #00bfff">React</i>
               </ul>
             </div>
 
@@ -130,7 +133,7 @@
             <li> Earned NVIDIA DLI Certificate – Fundamentals of Accelerated Computing with CUDA C/C++.</li>
             <li> Earned Udemy Certificate – Learn Ethical Hacking from Scratch.</li>
             <li>Earned CISCO Certificate – Introduction to Cybersecurity.</li>
-           <li>Earned Udemy Certificate – The Git & GitHub Bootcamp </li>
+            <li>Earned Udemy Certificate – The Git & GitHub Bootcamp </li>
 
           </ul>
         </div>
@@ -139,7 +142,7 @@
   </section>
   <!----------------------------------------------------------Services----------------------------------------------------------------------------------->
 
-  <section id="service">
+  <section id="projects">
     <div class="wrapper">
       <div><span class="dot"></span></div>
       <div><span class="dot"></span></div>
@@ -163,91 +166,139 @@
         <h1>Projects</h1>
       </div>
       <div class="card-sec">
-          <div class="card" id="animate" style="--order:1;">
-            <div class="card-image">
-              <img
-                src="https://th.bing.com/th/id/R.2bed34b9ae3fb632e28eb210c8945d57?rik=Uoi4gYDCciw%2fhg&pid=ImgRaw&r=0">
-            </div>
-            <div class="card-text">
-              <h2 class="card-title">Jira Report</h2>
-              <p class="card-body">This project involves developing a comprehensive Jira report that provides valuable insights into team performance and task management. The report focuses on key metrics such as employee story points, the rollover of completed tickets to subsequent sprints, and the time taken to finish tasks. By analyzing these data points, the report aims to identify trends in productivity, highlight areas where tasks are consistently delayed, and provide a clear view of team efficiency. This will help in optimizing workflow, improving planning accuracy, and ensuring a balanced distribution of work among team members.</p>
-            </div>
+        <div class="card" id="animate" style="--order:1;">
+          <div class="card-image">
+            <img src="public/img/jiras.png">
           </div>
-      
+          <div class="card-text">
+            <h2 class="card-title">Jira Report</h2>
+            <p class="card-body">This project involves developing a comprehensive Jira report that provides valuable
+              insights into team performance and task management. The report focuses on key metrics such as employee
+              story points, the rollover of completed tickets to subsequent sprints, and the time taken to finish tasks.
+              By analyzing these data points, the report aims to identify trends in productivity, highlight areas where
+              tasks are consistently delayed, and provide a clear view of team efficiency. This will help in optimizing
+              workflow, improving planning accuracy, and ensuring a balanced distribution of work among team members.
+            </p>
+          </div>
+        </div>
 
-      
-          <div class="card" id="animate" style="--order:3;">
-            <div class="card-image">
-              <img
-                src="https://1.bp.blogspot.com/-vuyegUmd1CE/YKDZ9BdqktI/AAAAAAAAAD0/VqVOFFjpyd85HOwie1cjZH9Px4u-VcDUQCPcBGAsYHg/w640-h360/1.png">
-            </div>
-            <div class="card-text">
-              <h2 class="card-title">Face Detection</h2>
-              <p class="card-body">This project aims to implement a basic face detection system using Python and OpenCV. The objective is to develop a straightforward application that can identify and highlight faces in images or video feeds. Using OpenCV's pre-trained Haar Cascade classifiers, the project will focus on detecting faces with minimal setup and complexity. The system will involve loading an image or video stream, applying the face detection algorithm, and drawing bounding boxes around detected faces. This project serves as an introduction to computer vision and face detection, providing a foundation for more advanced applications.</p>
-            </div>
-          </div>
-      
 
-        
-          <div class="card" id="animate" style="--order:5;">
-            <div class="card-image">
-              <img src="/public/img/color.png">
-            </div>
-            <div class="card-text">
-              <h2 class="card-title">Color Detection</h2>
-              <p class="card-body">This project focuses on developing a color detection system using Python and OpenCV. The goal is to create a simple application that can identify and classify colors within images or video feeds. The system will involve capturing input from an image or video stream, processing the image to detect various colors, and providing a user-friendly interface to display the identified colors. Key tasks include converting the image to a color space suitable for color detection (e.g., HSV), implementing algorithms to detect and classify colors, and visualizing the results with color labels. This project serves as an introduction to color detection and image processing techniques.</p>
-            </div>
+        <div class="card" id="animate" style="--order:5;">
+          <div class="card-image">
+            <img src="/public/img/Eslint.png">
           </div>
-        
+          <div class="card-text">
+            <h2 class="card-title">Eslint Npm Package</h2>
+            <p class="card-body">This npm package offers an essential ESLint plugin that contains custom rules
+              specifically designed to improve code quality and enforce best practices. By integrating seamlessly with
+              ESLint, the plugin ensures that JavaScript and TypeScript code adheres to high-quality standards. It
+              provides automated code analysis to maintain consistent coding styles and guidelines, making it a
+              crucial tool for every project. The custom rules included in the plugin help address project-specific
+              needs, enhance code maintainability, and reduce errors, ensuring a robust and reliable codebase.</p>
+          </div>
+        </div>
 
-        <a href='/inquire'>
-          <div class="card" id="animate" style="--order:1;">
-            <div class="card-image">
-              <img src="/public/img/Eslint.png">
-            </div>
-            <div class="card-text">
-              <h2 class="card-title">Eslint Npm Package</h2>
-              <p class="card-body">This npm package offers an essential ESLint plugin that contains custom rules specifically designed to improve code quality and enforce best practices. By integrating seamlessly with ESLint, the plugin ensures that JavaScript and TypeScript code adheres to high-quality standards. It provides automated code analysis to maintain consistent coding styles and guidelines, making it a crucial tool for every project. The custom rules included in the plugin help address project-specific needs, enhance code maintainability, and reduce errors, ensuring a robust and reliable codebase.</p>
-            </div>
+        <div class="card" id="animate" style="--order:1;">
+          <div class="card-image">
+            <img src="/public/img/Real estate.png">
           </div>
-        </a>
+          <div class="card-text">
+            <h2 class="card-title">E-Commerce Real Estate</h2>
+            <p class="card-body">This real estate project leverages AI to enhance the property search experience by
+              providing personalized recommendations based on user preferences and behavior. The platform not only
+              helps users find properties that match their needs but also equips real estate agents with advanced
+              analytics tools. These tools offer insights into user behavior, market trends, and property performance,
+              enabling agents to make data-driven decisions and optimize their strategies. By integrating AI and
+              analytics, the platform aims to improve user satisfaction and agent efficiency in the real estate
+              market.</p>
+          </div>
+        </div>
 
-        <a href='/inquire'>
-          <div class="card" id="animate" style="--order:3;">
-            <div class="card-image">
-              <img src="/public/img/Real estate.png">
-            </div>
-            <div class="card-text">
-              <h2 class="card-title">E-Commerce Real Estate</h2>
-              <p class="card-body">This real estate project leverages AI to enhance the property search experience by providing personalized recommendations based on user preferences and behavior. The platform not only helps users find properties that match their needs but also equips real estate agents with advanced analytics tools. These tools offer insights into user behavior, market trends, and property performance, enabling agents to make data-driven decisions and optimize their strategies. By integrating AI and analytics, the platform aims to improve user satisfaction and agent efficiency in the real estate market.</p>
-            </div>
+        <div class="card" id="animate" style="--order:5;">
+          <div class="card-image">
+            <img src="/public/img/phynix.png">
           </div>
-        </a>
+          <div class="card-text">
+            <h2 class="card-title">Website for Media Marketing Agency</h2>
+            <p class="card-body">This project focuses on developing an engaging and user-friendly homepage for a media
+              marketing company. The homepage will serve as a dynamic introduction to the company's services,
+              showcasing their expertise in media production and marketing. It will feature visually appealing design
+              elements, clear navigation, and key information about the company's offerings, helping potential clients
+              understand their value proposition and encouraging them to explore further. With a focus on brand
+              representation and user experience, the homepage aims to make a strong first impression and drive client
+              engagement.</p>
+          </div>
+        </div>
 
-        <a href='/inquire'>
-          <div class="card" id="animate" style="--order:5;">
-            <div class="card-image">
-              <img src="/public/img/phynix.png">
-            </div>
-            <div class="card-text">
-              <h2 class="card-title">Website for Media Marketing Agency</h2>
-              <p class="card-body">This project focuses on developing an engaging and user-friendly homepage for a media marketing company. The homepage will serve as a dynamic introduction to the company's services, showcasing their expertise in media production and marketing. It will feature visually appealing design elements, clear navigation, and key information about the company's offerings, helping potential clients understand their value proposition and encouraging them to explore further. With a focus on brand representation and user experience, the homepage aims to make a strong first impression and drive client engagement.</p>
-            </div>
+        <div class="card hidden" id="animate" style="--order:1;">
+          <div class="card-image">
+            <img src="/public/img/face.png">
           </div>
-        </a>
+          <div class="card-text">
+            <h2 class="card-title">Face Detection</h2>
+            <p class="card-body">This project aims to implement a basic face detection system using Python and OpenCV.
+              The objective is to develop a straightforward application that can identify and highlight faces in images
+              or video feeds. Using OpenCV's pre-trained Haar Cascade classifiers, the project will focus on detecting
+              faces with minimal setup and complexity. The system will involve loading an image or video stream,
+              applying the face detection algorithm, and drawing bounding boxes around detected faces. This project
+              serves as an introduction to computer vision and face detection, providing a foundation for more advanced
+              applications.</p>
+          </div>
+        </div>
+
+        <div class="card hidden"  id="animate" style="--order:5;">
+          <div class="card-image">
+            <img src="/public/img/color.png">
+          </div>
+          <div class="card-text">
+            <h2 class="card-title">Color Detection</h2>
+            <p class="card-body">This project focuses on developing a color detection system using Python and OpenCV.
+              The goal is to create a simple application that can identify and classify colors within images or video
+              feeds. The system will involve capturing input from an image or video stream, processing the image to
+              detect various colors, and providing a user-friendly interface to display the identified colors. Key tasks
+              include converting the image to a color space suitable for color detection (e.g., HSV), implementing
+              algorithms to detect and classify colors, and visualizing the results with color labels. This project
+              serves as an introduction to color detection and image processing techniques.</p>
+          </div>
+        </div>
+
+
+        <div class="card hidden" id="animate" style="--order:1;">
+          <div class="card-image">
+            <img src="/public/img/bmi.png">
+          </div>
+          <div class="card-text">
+            <h2 class="card-title">BMI Calculator </h2>
+            <p class="card-body">This project is a BMI Calculator application designed to provide users with an easy
+              and efficient way to calculate their Body Mass Index (BMI). The interface allows users to select their
+              preferred unit system (Metric or Imperial), input their height and weight, and quickly compute their BMI
+              with the click of a button. The sleek design ensures a smooth user experience, and the app delivers
+              immediate feedback, helping users understand their health status based on their BMI. This tool aims to
+              promote awareness about healthy body weight and encourage users to make informed health decisions.</p>
+          </div>
+        </div>
+
       </div>
+      <div class="buttons"><button class="Learn-button " id="loadMore">Load More</button>
     </div>
+
   </section>
 
 
 
-  <section class="timeline">
+  <section id="experience" class="timeline">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
     <div class="title">
       <h1>Experience</h1>
     </div>
     <div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
       <div class="timeline__event__icon ">
-       09/2021 - 04/2023
+        09/2021 - 04/2023
       </div>
       <div class="timeline__event__date">
         Penetration Tester Freelancer
@@ -332,17 +383,18 @@
 
   <!----------------------------------------------------------Contact----------------------------------------------------------------------------------->
   <footer id="contact">
+    
     <div class="icons">
-      <a href="#" class="icon icon--instagram">
+      <a href="#" class="icon icon--instagram" target="_blank" rel="noopener noreferrer">
         <i class="ri-instagram-line"></i>
       </a>
-      <a href="#" class="icon icon--twitter">
-        <i class="ri-twitter-line"></i>
+      <a href="https://wa.me/96176125464" class="icon icon--whatsapp" target="_blank" rel="noopener noreferrer">
+        <i class="ri-whatsapp-line"></i>
       </a>
-      <a href="#" class="icon icon--linkedin">
+      <a href="" class="icon icon--linkedin" target="_blank" rel="noopener noreferrer">
         <i class="ri-linkedin-line"></i>
       </a>
-      <a href="#" class="icon icon--github">
+      <a href="https://github.com/Saeedbs1" class="icon icon--github" target="_blank" rel="noopener noreferrer">
         <i class="ri-github-line"></i>
       </a>
     </div>
@@ -351,7 +403,7 @@
         style="font-size:large;padding:5px"></i>saeedb2001.@gmail.com</a>
 
     <a href="tel:+96176125464"><i class="fa fa-phone" style="font-size:large;padding:5px"></i>+96176125464</a>
-    <small>Copyright &copy; 2023 Saeed Bou Shakra</small>
+    <small>Copyright &copy; 2024 Saeed Bou Shakra</small>
   </footer>
 
 </body>
@@ -480,6 +532,18 @@
     css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
     document.body.appendChild(css);
   };
+
+
+  document.getElementById('loadMore').addEventListener('click', function() {
+  const hiddenCards = document.querySelectorAll('.card.hidden');
+  for (let i = 0; i < 3 && i < hiddenCards.length; i++) {
+    hiddenCards[i].classList.remove('hidden');
+  }
+  if (document.querySelectorAll('.card.hidden').length === 0) {
+    this.style.display = 'none';
+  }
+});
+
 
 </script>
 
