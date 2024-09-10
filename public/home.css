@@ -655,7 +655,10 @@ footer {
   -webkit-mask: var(--mask);
   mask: var(--mask);
 }
-
+.language{
+  color: var(--color-gradient-end);
+  margin-bottom: 10px;
+}
 #projects .content {
   display: flex;
   flex-direction: column;
