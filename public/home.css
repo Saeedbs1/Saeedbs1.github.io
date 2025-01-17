@@ -56,61 +56,6 @@ footer {
   background-color: hsl(0, 0%, 10%);
 }
 
-.wave {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url("https://i.ibb.co/wQZVxxk/wave.png");
-  background-size: 1000px 100px;
-}
-
-.wave#wave1 {
-  z-index: 1;
-  opacity: 1;
-  bottom: 0;
-  animation: animateWaves 4s linear infinite;
-}
-
-.wave#wave2 {
-  z-index: 0;
-  opacity: 0.5;
-  bottom: 10px;
-  animation: animateWave 4s linear infinite !important;
-}
-
-.wave#wave3 {
-  z-index: 1;
-  opacity: 0.2;
-  bottom: 15px;
-  animation: animateWaves 3s linear infinite;
-}
-
-.wave#wave4 {
-  z-index: 0;
-  opacity: 0.7;
-  bottom: 20px;
-  animation: animateWave 3s linear infinite;
-}
-
-@keyframes animateWaves {
-  0% {
-    background-position-x: 1000px;
-  }
-  100% {
-    background-positon-x: 0px;
-  }
-}
-
-@keyframes animateWave {
-  0% {
-    background-position-x: -1000px;
-  }
-  100% {
-    background-positon-x: 0px;
-  }
-}
 /*================================================================animation====================================================*/
 #animate {
   transform: translatex(-100%);
@@ -289,7 +234,10 @@ footer {
       calc(100% - 60px) / 240px 100% repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
+  
 }
+
+
 
 .intro .cont {
   display: flex;
@@ -389,9 +337,24 @@ footer {
 .aboutSec {
   display: flex;
   background-color: var(--color-gradient-start);
-  overflow: hidden;
-  padding: 30px 0px 75px 0;
+  padding: 25px 0px 75px 0;
+  position: relative;
 }
+
+.aboutSec:after {
+  position: absolute;
+  content: '';
+  right: 0;
+  left: 0;
+  top: 100%;
+  z-index: 1;
+  display: block;
+  height: 100px;
+  background-size: 100px 100%;
+  background-image: 
+    linear-gradient(135deg,  var(--color-gradient-start) 25%, transparent 25%), 
+    linear-gradient(225deg,  var(--color-gradient-start) 25%, transparent 25%);
+} 
 
 .aboutSec .content {
   text-align: center;
@@ -403,7 +366,7 @@ footer {
 
 .title {
   position: relative;
-  margin: 75px 10px;
+  margin: 50px 10px;
 }
 .title h1 {
   color: var(--color-white);
@@ -648,12 +611,6 @@ footer {
 #projects {
   width: 100%;
   position: relative;
-  --mask: radial-gradient(11.41px at 50% 15.5px, #000 99%, #0000 101%)
-      calc(50% - 20px) 0/40px 100%,
-    radial-gradient(11.41px at 50% -5.5px, #0000 99%, #000 101%) 50% 10px/40px
-      100% repeat-x;
-  -webkit-mask: var(--mask);
-  mask: var(--mask);
 }
 .language{
   color: var(--color-gradient-end);
@@ -664,7 +621,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px 0 175px 0px;
+  padding: 75px 0 175px 0px;
 }
 
 .card-sec {
@@ -696,13 +653,13 @@ footer {
   z-index: -2;
 }
 
-.card-image > img {
+.card-image > video , img {
   width: 100%;
   height: 100%;
   object-fit: fill;
 }
 .card-text {
-  margin: -30px auto;
+  margin: -20px auto;
   width: 360px;
   max-width: 90%;
   background-color: #1d1c20;
@@ -755,6 +712,26 @@ footer {
   text-align: center;
   color: #000;
   padding: 0px 0 50px 0;
+  z-index: 0;
+    width: 100%;
+  box-sizing: border-box;
+}
+
+
+.timeline:before {
+  content: '';
+  background: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+} 
+
+.timeline:before {
+  transform: skewY(-6deg);
+  transform-origin: top left;
 }
 
 .timeline__event {
@@ -1055,6 +1032,7 @@ footer {
 
 /*==========================================================================Media==================================*/
 @media (max-width: 900px) {
+
   .navbar .links,
   .navbar .action_btn {
     display: none;

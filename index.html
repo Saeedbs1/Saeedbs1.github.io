@@ -72,10 +72,13 @@
         <div class="title" style="margin:20px;">
           <h1>About Me</h1>
         </div>
-        <h4>Detail-oriented and results-driven computer science student with a strong background in software
-          engineering, front-end, and back-end development. Proficient in creating robust applications while maintaining
-          hardware and software security. Possessing deep technical knowledge, exceptional communication skills, and a
-          collaborative approach to working in team environments.</h4>
+        <h4>A highly motivated and detail-oriented computer science graduate with extensive experience in software
+          engineering, specializing in
+          both front-end and back-end development. Skilled at building robust applications with a focus on performance,
+          security, and scalability.
+          Adept at ensuring seamless integration between hardware and software while maintaining high security
+          standards. Strong
+          communicator with a collaborative mindset and a proven ability to thrive in team-oriented environments.</h4>
         <div class="tab">
           <div class="tab-titles">
             <div class="tab-links active-link" onclick="opentab('Skills')" id="animate" style="--order:1;">Skills
@@ -136,7 +139,7 @@
             ACCREDITED PROGRAM</h3>
           <h4> 09/2020 - 1/2024</h4>
         </div>
-        
+
       </div>
     </div>
   </section>
@@ -219,7 +222,7 @@
 
         <div class="card" id="animate" style="--order:5;">
           <div class="card-image">
-            <img src="/public/img/phynix.png">
+            <video controls autoplay src="public/video/phynix.mp4"></video>
           </div>
           <div class="card-text">
             <h5 class="language">Laravel, Blade, Scss</h5>
@@ -251,7 +254,7 @@
           </div>
         </div>
 
-        <div class="card hidden"  id="animate" style="--order:5;">
+        <div class="card hidden" id="animate" style="--order:5;">
           <div class="card-image">
             <img src="/public/img/color.png">
           </div>
@@ -287,19 +290,13 @@
 
       </div>
       <div class="buttons"><button class="Learn-button " id="loadMore">Load More</button>
-    </div>
+      </div>
 
   </section>
 
 
 
   <section id="experience" class="timeline">
-    <div class="waves">
-      <div class="wave" id="wave1"></div>
-      <div class="wave" id="wave2"></div>
-      <div class="wave" id="wave3"></div>
-      <div class="wave" id="wave4"></div>
-    </div>
     <div class="title">
       <h1>Experience</h1>
     </div>
@@ -390,7 +387,7 @@
 
   <!----------------------------------------------------------Contact----------------------------------------------------------------------------------->
   <footer id="contact">
-    
+
     <div class="icons">
       <a href="#" class="icon icon--instagram" target="_blank" rel="noopener noreferrer">
         <i class="ri-instagram-line"></i>
@@ -541,15 +538,15 @@
   };
 
 
-  document.getElementById('loadMore').addEventListener('click', function() {
-  const hiddenCards = document.querySelectorAll('.card.hidden');
-  for (let i = 0; i < 3 && i < hiddenCards.length; i++) {
-    hiddenCards[i].classList.remove('hidden');
-  }
-  if (document.querySelectorAll('.card.hidden').length === 0) {
-    this.style.display = 'none';
-  }
-});
+  document.getElementById('loadMore').addEventListener('click', function () {
+    const hiddenCards = document.querySelectorAll('.card.hidden');
+    for (let i = 0; i < 3 && i < hiddenCards.length; i++) {
+      hiddenCards[i].classList.remove('hidden');
+    }
+    if (document.querySelectorAll('.card.hidden').length === 0) {
+      this.style.display = 'none';
+    }
+  });
 
 
 </script>
