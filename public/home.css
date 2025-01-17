@@ -400,7 +400,7 @@ footer {
 .aboutSec {
   display: flex;
   background-color: var(--color-gradient-start);
-  padding: 25px 0 75px;
+  padding: 25px 8px 75px;
   position: relative;
 }
 
@@ -1094,7 +1094,7 @@ img {
 /*==========================================================================Media==================================*/
 @media (max-width: 900px) {
   .intro {
-    height: 130vh;
+    height: 120vh;
     align-items: flex-end;
     padding: 75px 0;
   }
