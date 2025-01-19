@@ -43,6 +43,40 @@ h4 {
   color: var(--color-light-gray);
 }
 
+.title {
+  position: relative;
+  margin: 50px 10px;
+}
+.title h1 {
+  color: var(--color-white);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: auto;
+  white-space: nowrap;
+  padding-bottom: 13px;
+}
+.title h1:before {
+  background-color: var(--color-gradient-end);
+  content: "";
+  display: block;
+  height: 5px;
+  width: 40%;
+  margin-bottom: 5px;
+}
+.title h1:after {
+  background-color: var(--color-gradient-end);
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  width: 40%;
+  margin-bottom: 0.25em;
+}
 /*================================================================animation====================================================*/
 #animate {
   transform: translatex(-100%);
@@ -393,7 +427,7 @@ h4 {
 .aboutSec {
   display: flex;
   background-color: var(--color-gradient-start);
-  padding: 25px 8px 75px;
+  padding: 0px 8px 75px;
   position: relative;
 }
 
@@ -405,40 +439,7 @@ h4 {
   flex-wrap: wrap;
 }
 
-.title {
-  position: relative;
-  margin: 50px 10px;
-}
-.title h1 {
-  color: var(--color-white);
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-align: center;
-  margin: auto;
-  white-space: nowrap;
-  padding-bottom: 13px;
-}
-.title h1:before {
-  background-color: var(--color-gradient-end);
-  content: "";
-  display: block;
-  height: 5px;
-  width: 40%;
-  margin-bottom: 5px;
-}
-.title h1:after {
-  background-color: var(--color-gradient-end);
-  content: "";
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  height: 5px;
-  width: 40%;
-  margin-bottom: 0.25em;
-}
+
 
 .container {
   display: flex;
@@ -711,7 +712,7 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 75px 0 175px;
+  padding: 50px 0 150px;
 }
 
 .card-sec {
