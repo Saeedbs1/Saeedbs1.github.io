@@ -439,8 +439,6 @@ h4 {
   flex-wrap: wrap;
 }
 
-
-
 .container {
   display: flex;
   flex-direction: column;
@@ -712,7 +710,7 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px 0 150px;
+  padding: 50px 0 160px 0;
 }
 
 .card-sec {
@@ -803,7 +801,7 @@ img {
   background: var(--color-gradient-start);
   text-align: center;
   color: #000;
-  padding: 0px 0 50px 0;
+  padding: 0px 0 75px 0;
   z-index: 0;
   width: 100%;
   box-sizing: border-box;
