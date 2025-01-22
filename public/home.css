@@ -10,8 +10,7 @@ html {
   --color-light-gray: #a8acb2;
   --color-gradient-start: #17224d;
   --color-gradient-end: #3aafa9;
-  --color-black: #252525;
-  /* --color-black:# hsl(0, 0%, 10%); */
+  --color-black: hsl(0, 0%, 10%);
   box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -44,40 +43,6 @@ h4 {
   color: var(--color-light-gray);
 }
 
-.title {
-  position: relative;
-  margin: 50px 10px;
-}
-.title h1 {
-  color: var(--color-white);
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-align: center;
-  margin: auto;
-  white-space: nowrap;
-  padding-bottom: 13px;
-}
-.title h1:before {
-  background-color: var(--color-gradient-end);
-  content: "";
-  display: block;
-  height: 5px;
-  width: 40%;
-  margin-bottom: 5px;
-}
-.title h1:after {
-  background-color: var(--color-gradient-end);
-  content: "";
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  height: 5px;
-  width: 40%;
-  margin-bottom: 0.25em;
-}
 /*================================================================animation====================================================*/
 #animate {
   transform: translatex(-100%);
@@ -149,7 +114,7 @@ h4 {
 .navbar .links a {
   text-decoration: none;
   padding: 0.5rem 1rem;
-  transition: color 0.4s linear;
+  transition: color 0.4s ease;
 }
 
 .navbar .links a.active {
@@ -202,7 +167,7 @@ h4 {
   height: 0;
   background-color: var(--color-black);
   box-shadow: 5px 20px 50px #000;
-  border-radius: 0 0 15px 15px;
+  border-radius: 1rem;
   overflow: hidden;
   transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 3;
@@ -213,10 +178,9 @@ h4 {
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  min-height: 325px;
-  padding: 20px;
+  min-height: 300px;
   width: 100%;
-  margin-top: 70px;
+  margin-top: 80px;
 }
 .dropdown_menu li {
   list-style: none;
@@ -232,11 +196,13 @@ h4 {
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-color: var(--color-gradient-end);
+  border-radius: 20px;
   text-transform: uppercase;
-  transition: color 0.4s linear;
+  transition: color 0.4s ease-in-out, border 0.5s ease-in-out;
 }
 .dropdown_menu li a.active {
   color: var(--color-gradient-end);
+  border: 3px dashed;
 }
 
 /* =============================================================================Intro========================================================================================= */
@@ -427,7 +393,7 @@ h4 {
 .aboutSec {
   display: flex;
   background-color: var(--color-gradient-start);
-  padding: 0px 8px 75px;
+  padding: 25px 8px 75px;
   position: relative;
 }
 
@@ -437,6 +403,41 @@ h4 {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.title {
+  position: relative;
+  margin: 50px 10px;
+}
+.title h1 {
+  color: var(--color-white);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: auto;
+  white-space: nowrap;
+  padding-bottom: 13px;
+}
+.title h1:before {
+  background-color: var(--color-gradient-end);
+  content: "";
+  display: block;
+  height: 5px;
+  width: 40%;
+  margin-bottom: 5px;
+}
+.title h1:after {
+  background-color: var(--color-gradient-end);
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  width: 40%;
+  margin-bottom: 0.25em;
 }
 
 .container {
@@ -710,7 +711,7 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px 0 160px 0;
+  padding: 75px 0 175px;
 }
 
 .card-sec {
@@ -801,7 +802,7 @@ img {
   background: var(--color-gradient-start);
   text-align: center;
   color: #000;
-  padding: 0px 0 75px 0;
+  padding: 0px 0 50px 0;
   z-index: 0;
   width: 100%;
   box-sizing: border-box;
