@@ -304,7 +304,6 @@ const container = document.getElementById("canvas-container");
 const scene = new THREE.Scene();
 const isMobile = window.innerWidth <= 900;
 const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-camera.position.set(4, 4, 4);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -563,11 +562,17 @@ function resizeRenderer() {
   container.style.width = `${size.x * scaleFactor}px`;
   container.style.height = `${size.y * scaleFactor}px`;
   if (isMobile) {
-    camera.fov = 38;
+    controls.enableRotate = false;
+    controls.enableZoom = false;
+    controls.enablePan = false;
     controls.touches = {
       ONE: THREE.TOUCH.NONE,
-      TWO: THREE.TOUCH.ROTATE,
+      TWO: THREE.TOUCH.NONE,
     };
+    renderer.domElement.style.pointerEvents = "none";
+  } else {
+    controls.enableRotate = true;
+    renderer.domElement.style.pointerEvents = "auto";
   }
   camera.aspect = size.x / size.y;
   camera.position.set(center.x + 4, center.y + 4, center.z + 4);
