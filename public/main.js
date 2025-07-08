@@ -302,7 +302,7 @@ requestAnimationFrame(parallaxShapes);
 /*8============================================Cube ========================================*/
 const container = document.getElementById("canvas-container");
 const scene = new THREE.Scene();
-
+const isMobile = window.innerWidth <= 900;
 const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
 camera.position.set(4, 4, 4);
 
@@ -562,7 +562,13 @@ function resizeRenderer() {
   renderer.setSize(size.x * scaleFactor, size.y * scaleFactor);
   container.style.width = `${size.x * scaleFactor}px`;
   container.style.height = `${size.y * scaleFactor}px`;
-
+  if (isMobile) {
+    camera.fov = 38;
+    controls.touches = {
+      ONE: THREE.TOUCH.NONE,
+      TWO: THREE.TOUCH.ROTATE,
+    };
+  }
   camera.aspect = size.x / size.y;
   camera.position.set(center.x + 4, center.y + 4, center.z + 4);
   camera.lookAt(center);
