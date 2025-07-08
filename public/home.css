@@ -1381,7 +1381,9 @@ footer .contact-info a:hover {
   .card-image {
     height: 220px;
   }
-
+  .tab-contents{
+    width: 100%;
+  }
   .timeline .event {
     flex-direction: column;
     align-self: center;
