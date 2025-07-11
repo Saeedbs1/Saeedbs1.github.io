@@ -1264,7 +1264,7 @@ footer .contact-info a:hover {
 .icons {
   display: flex;
   justify-content: center;
-  column-gap: 25px;
+  column-gap: 30px;
   margin: 10px;
   z-index: 1;
 }
@@ -1294,15 +1294,6 @@ footer .contact-info a:hover {
   animation: shake 0.25s;
 }
 
-.icon--instagram:hover {
-  background-image: radial-gradient(circle at 30% 107%,
-      #fdf497 0%,
-      #fdf497 5%,
-      #fd5949 45%,
-      #d6249f 60%,
-      #285aeb 90%);
-  outline-color: #a02d76;
-}
 
 .icon--whatsapp:hover {
   background-color: #2ea44f;
@@ -1382,6 +1373,21 @@ footer .contact-info a:hover {
   }
   .tab-contents{
     width: 100%;
+  }
+  .tag {
+    font-size: 0.7rem;
+    padding: 0.75rem 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  .tag span {
+    font-size: 1rem;
+    color: #64748b;
+  }
+  .tag i {
+    font-size: 1rem;
+    padding: 0;
+    margin-right: -3px;
   }
   .timeline .event {
     flex-direction: column;

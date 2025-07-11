@@ -305,17 +305,21 @@ const scene = new THREE.Scene();
 const isMobile = window.innerWidth <= 900;
 const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
 
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+const renderer = new THREE.WebGLRenderer({ 
+  antialias: true, 
+  alpha: true,
+  preserveDrawingBuffer: true
+});
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setClearColor(0x000000, 0); 
+renderer.setClearColor(0x000000, 0);
 renderer.outputEncoding = THREE.sRGBEncoding;
 container.appendChild(renderer.domElement);
 
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.07;
-controls.minDistance = 3;
-controls.maxDistance = 20;
+controls.minDistance = isMobile ? 2 : 3;
+controls.maxDistance = isMobile ? 10 : 20;
 controls.enableZoom = false;
 
 scene.add(new THREE.AmbientLight(0x404060, 1.2));
@@ -325,10 +329,9 @@ dirLight.position.set(5, 10, 7);
 scene.add(dirLight);
 
 scene.add(new THREE.HemisphereLight(0x222244, 0x000000, 0.4));
+scene.environment = null;
 
-scene.environment = null; 
-
-const cubeSize = 2.1;
+const cubeSize = isMobile ? 3.0 : 2.1;
 const cubeGeometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
 const cubeMaterial = new THREE.MeshStandardMaterial({
   color: "#111122",
@@ -338,7 +341,7 @@ const cubeMaterial = new THREE.MeshStandardMaterial({
   emissiveIntensity: 0.18,
   envMap: null,
   envMapIntensity: 0,
-  side: THREE.DoubleSide,
+  side: THREE.DoubleSide
 });
 const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
 scene.add(cube);
@@ -350,16 +353,15 @@ function createCircuitGrid(size, divisions) {
     transparent: true,
     opacity: 0.75,
     blending: THREE.AdditiveBlending,
-    depthWrite: false,
+    depthWrite: false
   });
 
   for (let i = 0; i <= divisions; i++) {
     const pos = (i * size) / divisions - size / 2;
-
     const hLine = new THREE.Line(
       new THREE.BufferGeometry().setFromPoints([
         new THREE.Vector3(-size / 2, pos, 0),
-        new THREE.Vector3(size / 2, pos, 0),
+        new THREE.Vector3(size / 2, pos, 0)
       ]),
       baseMaterial.clone()
     );
@@ -368,13 +370,12 @@ function createCircuitGrid(size, divisions) {
     const vLine = new THREE.Line(
       new THREE.BufferGeometry().setFromPoints([
         new THREE.Vector3(pos, size / 2, 0),
-        new THREE.Vector3(pos, -size / 2, 0),
+        new THREE.Vector3(pos, -size / 2, 0)
       ]),
       baseMaterial.clone()
     );
     group.add(vLine);
   }
-
   return group;
 }
 
@@ -386,7 +387,7 @@ const faceConfigs = [
   { pos: [-offset, 0, 0], rot: [0, -Math.PI / 2, 0] },
   { pos: [offset, 0, 0], rot: [0, Math.PI / 2, 0] },
   { pos: [0, offset, 0], rot: [-Math.PI / 2, 0, 0] },
-  { pos: [0, -offset, 0], rot: [Math.PI / 2, 0, 0] },
+  { pos: [0, -offset, 0], rot: [Math.PI / 2, 0, 0] }
 ];
 
 faceConfigs.forEach(({ pos, rot }) => {
@@ -403,7 +404,7 @@ const snippets = [
   `pipeline {\n  stages {\n    stage('Build') {\n      steps { sh 'npm run' }\n    }\n  }\n}`,
   `+ feat: Add auth middleware\n- fix: Remove all logs\n+ test: Add new unit tests\n+ docs: Update README\n`,
   `test("adds numbers", () => {\n  expect(sum(2, 2))\n .toBe(4);\n});`,
-  `useEffect(() => {\n  fetch("/api/data")\n    .then(r => r.json())\n    .then(setData);\n}, []);`,
+  `useEffect(() => {\n  fetch("/api/data")\n    .then(r => r.json())\n    .then(setData);\n}, []);`
 ];
 
 const snippetMeshes = [];
@@ -417,9 +418,9 @@ fontLoader.load(
     snippets.forEach((text, idx) => {
       const textGeo = new THREE.TextGeometry(text, {
         font,
-        size: 0.11,
+        size: isMobile ? 0.15 : 0.11,
         height: 0.02,
-        curveSegments: 6,
+        curveSegments: 6
       });
       textGeo.computeBoundingBox();
       textGeo.center();
@@ -431,7 +432,7 @@ fontLoader.load(
       const textMaterial = new THREE.MeshBasicMaterial({
         color: "#ffffff",
         transparent: true,
-        opacity: 0,
+        opacity: 0
       });
 
       const textMesh = new THREE.Mesh(textGeo, textMaterial);
@@ -448,7 +449,7 @@ fontLoader.load(
           transparent: true,
           depthWrite: false,
           blending: THREE.AdditiveBlending,
-          side: THREE.DoubleSide,
+          side: THREE.DoubleSide
         })
       );
       bgPlane.position.copy(textMesh.position);
@@ -466,7 +467,6 @@ fontLoader.load(
 
 const glowMaterial = new THREE.MeshBasicMaterial({ color: "#00ffff" });
 const sphereGeometry = new THREE.SphereGeometry(0.06, 16, 16);
-
 const glowSpheres = [];
 const orbitRadius = 2.5;
 
@@ -479,24 +479,15 @@ for (let plane = 0; plane < 3; plane++) {
       orbitPlane: plane,
       index: i,
       speed: 0.002 + 0.001 * plane,
-      t: i / 6,
+      t: i / 6
     });
   }
 }
 
-const raycaster = new THREE.Raycaster();
-const mouse = new THREE.Vector2();
-let hovered = false;
 let shownSnippetsCount = 0;
-
-window.addEventListener("mousemove", (event) => {
-  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-});
 
 function unlockNextSnippet() {
   if (shownSnippetsCount >= snippetMeshes.length) return;
-
   const { text, panel } = snippetMeshes[shownSnippetsCount];
   let opacity = 0;
 
@@ -517,38 +508,19 @@ function animate() {
 
   cube.rotation.x += 0.002;
   cube.rotation.y += 0.003;
+
   cube.children.forEach((child) => {
     if (child.type === "Group") {
       child.children.forEach((line) => {
-        line.material.opacity =
-          0.5 + 0.5 * Math.sin(Date.now() * 0.002 + line.id);
+        line.material.opacity = 0.5 + 0.5 * Math.sin(Date.now() * 0.002 + line.id);
         line.material.needsUpdate = true;
       });
     }
   });
-  
-  
-  raycaster.setFromCamera(mouse, camera);
-  const intersects = raycaster.intersectObject(cube);
-
-  if (intersects.length > 0) {
-    if (!hovered) {
-      hovered = true;
-      cubeMaterial.emissiveIntensity = 0.6;
-      cube.scale.set(1.05, 1.05, 1.05);
-      if (shownSnippetsCount === 0) unlockNextSnippet();
-    }
-  } else if (hovered) {
-    hovered = false;
-    cubeMaterial.emissiveIntensity = 0.18;
-    cube.scale.set(1, 1, 1);
-  }
 
   controls.update();
   renderer.render(scene, camera);
 }
-
-const scaleFactor = 300;
 
 function resizeRenderer() {
   const box = new THREE.Box3().setFromObject(cube);
@@ -558,28 +530,37 @@ function resizeRenderer() {
   box.getSize(size);
   box.getCenter(center);
 
+  const scaleFactor = isMobile ? Math.min(window.innerWidth, window.innerHeight) / size.x * 0.8 : 300;
+  
   renderer.setSize(size.x * scaleFactor, size.y * scaleFactor);
   container.style.width = `${size.x * scaleFactor}px`;
   container.style.height = `${size.y * scaleFactor}px`;
+  
   if (isMobile) {
     controls.enableRotate = false;
     controls.enableZoom = false;
     controls.enablePan = false;
     controls.touches = {
       ONE: THREE.TOUCH.NONE,
-      TWO: THREE.TOUCH.NONE,
+      TWO: THREE.TOUCH.NONE
     };
-    renderer.domElement.style.pointerEvents = "none";
   } else {
     controls.enableRotate = true;
-    renderer.domElement.style.pointerEvents = "auto";
   }
+  
   camera.aspect = size.x / size.y;
   camera.position.set(center.x + 4, center.y + 4, center.z + 4);
   camera.lookAt(center);
   camera.updateProjectionMatrix();
 }
 
+window.addEventListener('resize', () => {
+  resizeRenderer();
+});
+
+if (isMobile) {
+  setTimeout(unlockNextSnippet, 500);
+}
 
 resizeRenderer();
 animate();
