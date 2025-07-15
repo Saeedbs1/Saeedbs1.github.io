@@ -26,11 +26,11 @@ window.addEventListener("load", () => {
     const loader = document.getElementById("custom-loader");
     loader.classList.add("hidden");
 
-    const canvasContainer = document.getElementById("canvas-container");
-    if (canvasContainer) {
-      canvasContainer.style.opacity = "1";
-      canvasContainer.style.transform = "translateX(0) scale(1)";
-    }
+   const canvasContainer = document.getElementById("canvas-container");
+   if (canvasContainer) {
+     canvasContainer.classList.add("popin-active");
+   }
+
 
     const introCont = document.querySelector(".intro .cont");
     if (introCont) {
