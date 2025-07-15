@@ -226,10 +226,9 @@ for (let i = 0; i < bubbleCount; i++) {
   const randomLeft = (Math.random() * 95).toFixed(2) + "%";
   const randomSize = (Math.random() * 70 + 50).toFixed(0) + "px";
   const randomDirection = Math.random() > 0.5 ? "normal" : "reverse";
-  const randomColor = `hsl(${Math.random() * 360}, 100%, ${
-    Math.random() * 50 + 30
-  }%)`;
-  const randomOpacity = (Math.random() * 0.4 + 0.2).toFixed(2); 
+  const randomColor = `hsl(${Math.random() * 360}, 100%, ${Math.random() * 50 + 30
+    }%)`;
+  const randomOpacity = (Math.random() * 0.4 + 0.2).toFixed(2);
   bubble.style.opacity = randomOpacity;
   const r1 = Math.floor(Math.random() * 75);
   const randomRadius = `${r1}%`;
@@ -261,17 +260,14 @@ function parallaxShapes() {
   const shape2 = document.querySelector(".shape2");
   const shape3 = document.querySelector(".shape3");
   if (shape1)
-    shape1.style.transform = `translate3d(0,${
-      scrollY * 0.125
-    }px,0) scale(${getScale(0.5)})`;
+    shape1.style.transform = `translate3d(0,${scrollY * 0.125
+      }px,0) scale(${getScale(0.5)})`;
   if (shape2)
-    shape2.style.transform = `translate3d(0,${
-      scrollY * 0.55
-    }px,0) scale(${getScale(1.1)})`;
+    shape2.style.transform = `translate3d(0,${scrollY * 0.55
+      }px,0) scale(${getScale(1.1)})`;
   if (shape3)
-    shape3.style.transform = `translate3d(0,${
-      scrollY * 0.3
-    }px,0) scale(${getScale(0.3)})`;
+    shape3.style.transform = `translate3d(0,${scrollY * 0.3
+      }px,0) scale(${getScale(0.3)})`;
   const expShape1 = document.querySelector(".exp-shape1");
   const expShape2 = document.querySelector(".exp-shape2");
   const expShape3 = document.querySelector(".exp-shape3");
@@ -284,17 +280,14 @@ function parallaxShapes() {
   }
 
   if (expShape1)
-    expShape1.style.transform = `translate3d(0,${
-      (scrollY - expShape1.parentElement.offsetTop) * 0.25
-    }px,0) scale(${expScale(0.5)})`;
+    expShape1.style.transform = `translate3d(0,${(scrollY - expShape1.parentElement.offsetTop) * 0.25
+      }px,0) scale(${expScale(0.5)})`;
   if (expShape2)
-    expShape2.style.transform = `translate3d(0,${
-      (scrollY - expShape2.parentElement.offsetTop) * 0.5
-    }px,0) scale(${expScale(0.7)})`;
+    expShape2.style.transform = `translate3d(0,${(scrollY - expShape2.parentElement.offsetTop) * 0.5
+      }px,0) scale(${expScale(0.7)})`;
   if (expShape3)
-    expShape3.style.transform = `translate3d(0,${
-      (scrollY - expShape3.parentElement.offsetTop) * 0.15
-    }px,0) scale(${expScale(0.3)})`;
+    expShape3.style.transform = `translate3d(0,${(scrollY - expShape3.parentElement.offsetTop) * 0.15
+      }px,0) scale(${expScale(0.3)})`;
 
   requestAnimationFrame(parallaxShapes);
 }
@@ -305,8 +298,8 @@ const scene = new THREE.Scene();
 const isMobile = window.innerWidth <= 900;
 const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
 
-const renderer = new THREE.WebGLRenderer({ 
-  antialias: true, 
+const renderer = new THREE.WebGLRenderer({
+  antialias: true,
   alpha: true,
   preserveDrawingBuffer: true
 });
@@ -334,11 +327,11 @@ scene.environment = null;
 const cubeSize = isMobile ? 3.0 : 2.1;
 const cubeGeometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
 const cubeMaterial = new THREE.MeshStandardMaterial({
-  color: "#111122",
-  metalness: 0.85,
-  roughness: 0.1,
-  emissive: "#004466",
-  emissiveIntensity: 0.18,
+  color: "#0a0a1a",  
+  metalness: 0.85,  
+  roughness: 0.15,    
+  emissive: "#003355",
+  emissiveIntensity: 0.12, 
   envMap: null,
   envMapIntensity: 0,
   side: THREE.DoubleSide
@@ -521,7 +514,12 @@ function animate() {
   controls.update();
   renderer.render(scene, camera);
 }
-
+snippetMeshes.forEach(({ text, panel }) => {
+  text.lookAt(camera.position);
+  text.rotation.x += 0.01;
+  text.rotation.z += 0.005;
+  panel.lookAt(camera.position);
+});
 function resizeRenderer() {
   const box = new THREE.Box3().setFromObject(cube);
   const size = new THREE.Vector3();
@@ -531,15 +529,16 @@ function resizeRenderer() {
   box.getCenter(center);
 
   const scaleFactor = isMobile ? Math.min(window.innerWidth, window.innerHeight) / size.x * 0.8 : 300;
-  
+
   renderer.setSize(size.x * scaleFactor, size.y * scaleFactor);
   container.style.width = `${size.x * scaleFactor}px`;
   container.style.height = `${size.y * scaleFactor}px`;
-  
+
   if (isMobile) {
     controls.enableRotate = false;
     controls.enableZoom = false;
     controls.enablePan = false;
+    controls.domElement.style.touchAction = "auto";
     controls.touches = {
       ONE: THREE.TOUCH.NONE,
       TWO: THREE.TOUCH.NONE
@@ -547,7 +546,7 @@ function resizeRenderer() {
   } else {
     controls.enableRotate = true;
   }
-  
+
   camera.aspect = size.x / size.y;
   camera.position.set(center.x + 4, center.y + 4, center.z + 4);
   camera.lookAt(center);

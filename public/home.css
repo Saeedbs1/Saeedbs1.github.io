@@ -78,7 +78,6 @@ h4 {
 }
 
 @keyframes glowFade {
-
   0%,
   100% {
     opacity: 0.3;
@@ -117,7 +116,6 @@ h4 {
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     box-shadow: 0 0 10px #00ffff55, 0 0 20px #00ffff22;
@@ -142,7 +140,6 @@ h4 {
 }
 
 @keyframes blink {
-
   0%,
   100% {
     opacity: 1;
@@ -251,12 +248,16 @@ h4 {
 .navbar .action_btn {
   font-weight: bold;
   font-size: 16px;
-  background: linear-gradient(to left,
+  background: linear-gradient(
+      to left,
       var(--color-gradient-start) 0%,
-      var(--color-gradient-end) 100%),
-    linear-gradient(to right,
+      var(--color-gradient-end) 100%
+    ),
+    linear-gradient(
+      to right,
       var(--color-gradient-start) 0%,
-      var(--color-gradient-end) 100%);
+      var(--color-gradient-end) 100%
+    );
   background-size: 100%, 200%;
   color: var(--color-white);
   padding: 0.5rem 1rem;
@@ -335,7 +336,6 @@ h4 {
   box-sizing: border-box;
 }
 
-
 .intro .content {
   display: flex;
   justify-content: space-between;
@@ -359,6 +359,7 @@ h4 {
   transform-origin: top left;
   overflow: hidden;
   pointer-events: none;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
 }
 
 .skewed::before {
@@ -368,8 +369,9 @@ h4 {
   height: 300%;
   top: -100%;
   left: -100%;
-  background: var(--color-black);
-  animation: bgShift 20s ease-in-out infinite;
+  background-color: var(--color-black);
+  animation: bgShift 20s ease-in-out infinite,
+    colorPulse 15s ease-in-out infinite alternate;
   z-index: 1;
 }
 
@@ -378,30 +380,85 @@ h4 {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image:
-    radial-gradient(2px 2px at 20% 30%, #ffffff 90%, transparent 100%),
+  background-image: radial-gradient(
+      2px 2px at 20% 30%,
+      #ffffff 90%,
+      transparent 100%
+    ),
     radial-gradient(2px 2px at 60% 20%, #ffffff 90%, transparent 100%),
     radial-gradient(2px 2px at 80% 80%, #ffffff 90%, transparent 100%),
     radial-gradient(2px 2px at 40% 70%, #ffffff 90%, transparent 100%),
-    radial-gradient(2px 2px at 10% 90%, #ffffff 90%, transparent 100%);
+    radial-gradient(2px 2px at 10% 90%, #ffffff 90%, transparent 100%),
+    radial-gradient(
+      1px 1px at 90% 10%,
+      var(--color-gradient-end) 90%,
+      transparent 100%
+    ),
+    radial-gradient(
+      1px 1px at 30% 50%,
+      var(--color-gradient-end) 90%,
+      transparent 100%
+    ),
+    radial-gradient(
+      1px 1px at 70% 40%,
+      var(--color-gradient-end) 90%,
+      transparent 100%
+    );
   background-repeat: repeat;
   background-size: 300px 300px;
-  animation: starTwinkle 4s ease-in-out infinite alternate;
+  animation: starTwinkle 4s ease-in-out infinite alternate,
+    starDrift 60s linear infinite;
   z-index: 2;
-  opacity: 0.2;
+  opacity: 0.3;
+  mix-blend-mode: screen;
+}
+
+@keyframes colorPulse {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(5deg) brightness(1.05);
+  }
+}
+
+@keyframes starDrift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 300px 300px;
+  }
 }
 
 @keyframes bgShift {
-  0% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.1) rotate(1deg); }
-  100% { transform: scale(1) rotate(0deg); }
+  0% {
+    transform: scale(1) rotate(0deg) translate(0, 0);
+  }
+  33% {
+    transform: scale(1.05) rotate(0.5deg) translate(-5px, 2px);
+  }
+  66% {
+    transform: scale(1.03) rotate(-0.5deg) translate(3px, -1px);
+  }
+  100% {
+    transform: scale(1) rotate(0deg) translate(0, 0);
+  }
 }
 
 @keyframes starTwinkle {
-  0% { opacity: 0.2; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.01); }
-  100% { opacity: 0.2; transform: scale(1); }
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
 }
+
 .intro .cont {
   display: flex;
   flex-direction: column;
@@ -449,12 +506,16 @@ h4 {
 }
 
 .Learn-button {
-  background: linear-gradient(to left,
+  background: linear-gradient(
+      to left,
       var(--color-gradient-start) 0%,
-      var(--color-gradient-end) 0%),
-    linear-gradient(to left,
+      var(--color-gradient-end) 0%
+    ),
+    linear-gradient(
+      to left,
       var(--color-gradient-start) 0%,
-      var(--color-gradient-end) 100%);
+      var(--color-gradient-end) 100%
+    );
   background-size: 100%, 200%;
   border-radius: 5px;
   color: var(--color-white);
@@ -475,12 +536,16 @@ h4 {
 }
 
 .Hire-button {
-  background: linear-gradient(to left,
+  background: linear-gradient(
+      to left,
       var(--color-gradient-start) 100%,
-      var(--color-gradient-end) 100%),
-    linear-gradient(to right,
+      var(--color-gradient-end) 100%
+    ),
+    linear-gradient(
+      to right,
       var(--color-gradient-start) 0%,
-      var(--color-gradient-end) 100%);
+      var(--color-gradient-end) 100%
+    );
   background-size: 100%, 200%;
   border-radius: 0 15px;
   color: var(--color-white);
@@ -505,16 +570,16 @@ h4 {
   transform: translateX(500px) scale(0.9);
   transition: all 1.5s ease-out;
   display: block;
-  background: transparent; 
+  background: transparent;
   overflow: hidden;
+  touch-action: auto;
 }
 
 canvas {
   width: 100% !important;
   height: 100% !important;
+  touch-action: auto;
 }
-
-
 /*====================================================About======================================================================================*/
 
 #parallax-shapes-container {
@@ -750,15 +815,17 @@ canvas {
 
 .fade {
   pointer-events: none;
-  background: linear-gradient(90deg,
-      #17224d 0%,
-      rgba(23, 34, 77, 0.9) 10%,
-      rgba(23, 34, 77, 0.6) 20%,
-      transparent 30%,
-      transparent 70%,
-      rgba(23, 34, 77, 0.6) 80%,
-      rgba(23, 34, 77, 0.9) 90%,
-      #17224d 100%);
+  background: linear-gradient(
+    90deg,
+    #17224d 0%,
+    rgba(23, 34, 77, 0.9) 10%,
+    rgba(23, 34, 77, 0.6) 20%,
+    transparent 30%,
+    transparent 70%,
+    rgba(23, 34, 77, 0.6) 80%,
+    rgba(23, 34, 77, 0.9) 90%,
+    #17224d 100%
+  );
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -902,7 +969,7 @@ canvas {
   width: 480px;
 }
 
-.card>div {
+.card > div {
   transform: translatey(0px);
   animation: float 7s ease-in-out infinite;
 }
@@ -914,7 +981,7 @@ canvas {
   z-index: -2;
 }
 
-.card-image>video,
+.card-image > video,
 img {
   width: 100%;
   height: 100%;
@@ -944,7 +1011,7 @@ img {
   color: var(--color-light-gray);
 }
 
-.card-image>img:hover {
+.card-image > img:hover {
   scale: 1.1;
 }
 
@@ -1294,7 +1361,6 @@ footer .contact-info a:hover {
   animation: shake 0.25s;
 }
 
-
 .icon--whatsapp:hover {
   background-color: #2ea44f;
   outline-color: #2ea44f;
@@ -1371,24 +1437,28 @@ footer .contact-info a:hover {
   .card-image {
     height: 220px;
   }
-  .tab-contents{
+
+  .tab-contents {
     width: 100%;
   }
+
   .tag {
     font-size: 0.7rem;
     padding: 0.75rem 1rem;
     margin-right: 0.5rem;
   }
-  
+
   .tag span {
     font-size: 1rem;
     color: #64748b;
   }
+
   .tag i {
     font-size: 1rem;
     padding: 0;
     margin-right: -3px;
   }
+
   .timeline .event {
     flex-direction: column;
     align-self: center;
